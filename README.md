@@ -26,6 +26,8 @@ Portfolio/
 │ ├── github.png # GitHub icon
 │ ├── linkedin.png # LinkedIn icon
 │ ├── email.png # Email icon
+│ └── weblink.png # Website link icon
+└── README.md # Project documentation
 
 
 ## Live Demo
@@ -52,5 +54,4 @@ https://priyadharshinirvp.github.io/Portfolio/
 
 If you like this portfolio, feel free to fork or star the repository!
 
-│ └── weblink.png # Website link icon
-└── README.md # Project documentation
+
