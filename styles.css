@@ -1,0 +1,636 @@
+/* ============================================
+   PORTFOLIO CSS - MODERN & CLEAN
+   Cat image on LEFT, Text on RIGHT layout
+   Icons on TOP-RIGHT of project cards
+   ============================================ */
+
+/* 1. RESET & BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. VARIABLES */
+:root {
+    /* Colors */
+    --bg-primary: #0a192f;
+    --bg-secondary: #112240;
+    --bg-tertiary: #233554;
+    --bg-light: #172a45;
+    
+    --text-primary: #e6f1ff;
+    --text-secondary: #a8b2d1;
+    --text-accent: #64ffda;
+    --text-muted: #8892b0;
+    
+    /* Typography */
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2.5rem;
+    --spacing-xl: 4rem;
+    --spacing-xxl: 6rem;
+    
+    /* Transitions */
+    --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    
+    /* Borders */
+    --border-radius: 4px;
+    --border-radius-lg: 8px;
+}
+
+/* 3. BASE STYLES */
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-primary);
+    color: var(--text-secondary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* 4. HEADER */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 5%;
+    background-color: rgba(10, 25, 47, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.page-selector {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.page-selector a {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: var(--spacing-xs) 0;
+    position: relative;
+    transition: var(--transition);
+}
+
+.page-selector a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--text-accent);
+    transition: var(--transition);
+}
+
+.page-selector a:hover {
+    color: var(--text-accent);
+}
+
+.page-selector a:hover::after {
+    width: 100%;
+}
+
+.socials-selector {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.smicon-selector {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+.smicon-selector:hover {
+    opacity: 1;
+    filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(130deg);
+    transform: translateY(-2px);
+}
+
+/* 5. HERO SECTION - IMAGE LEFT, TEXT RIGHT */
+.hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    align-items: center;
+    gap: 4rem;
+    padding: 0 5%;
+    padding-top: 120px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Cat image on LEFT */
+.hero-image {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.hero-image img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+    border: 2px solid var(--text-accent);
+}
+
+.hero-image img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(100, 255, 218, 0.2);
+}
+
+/* Text content on RIGHT */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.hero-text {
+    font-size: clamp(3rem, 5vw, 4rem);
+    line-height: 1.1;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.hero-text span {
+    color: var(--text-accent);
+    display: block;
+}
+
+.subhero-text {
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+    line-height: 1.7;
+    max-width: 500px;
+    margin-top: var(--spacing-sm);
+}
+
+/* Say Hi Button */
+.say-hi-btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    color: var(--text-accent);
+    border: 1px solid var(--text-accent);
+    border-radius: var(--border-radius);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    margin-top: var(--spacing-lg);
+    transition: var(--transition);
+    width: fit-content;
+    text-decoration: none;
+}
+
+.say-hi-btn:hover {
+    background-color: rgba(100, 255, 218, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(100, 255, 218, 0.2);
+}
+
+/* 6. SECTION COMMON STYLES */
+section {
+    padding: var(--spacing-xxl) 5%;
+    max-width: 1000px;
+    margin: 0 auto;
+    scroll-margin-top: 100px;
+}
+
+/* 7. ABOUT SECTION */
+.about h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-accent);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.about h1::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: var(--text-muted);
+    opacity: 0.3;
+    margin-left: var(--spacing-sm);
+}
+
+.about-text {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-xl);
+    max-width: 650px;
+}
+
+.tech-list {
+    list-style: none;
+}
+
+.tech-label {
+    color: var(--text-primary);
+    font-size: 1rem;
+    margin-bottom: var(--spacing-md);
+    font-weight: 500;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+}
+
+.tech-name {
+    background-color: var(--bg-secondary);
+    color: var(--text-accent);
+    padding: 0.5rem 1.2rem;
+    border-radius: var(--border-radius);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    transition: var(--transition);
+    border: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.tech-name:hover {
+    background-color: var(--bg-tertiary);
+    transform: translateY(-3px);
+    border-color: var(--text-accent);
+}
+
+/* 8. EXPERIENCE SECTION */
+.experience h2 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-xl);
+    color: var(--text-accent);
+}
+
+.internship {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    padding-left: var(--spacing-lg);
+    position: relative;
+}
+
+.internship::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--text-accent);
+    font-size: 1.2rem;
+}
+
+.experience-list {
+    list-style: none;
+    padding-left: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.internship-work {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+    padding-left: var(--spacing-md);
+    position: relative;
+    line-height: 1.7;
+}
+
+.internship-work::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--text-accent);
+    font-size: 1.2rem;
+}
+
+.experience-link {
+    padding-left: var(--spacing-lg);
+}
+
+/* 9. PROJECTS SECTION - UPDATED FOR TOP-RIGHT ICONS */
+.projects-section {
+    margin-bottom: var(--spacing-xxl);
+}
+
+.project-type {
+    font-size: 2.5rem;
+    color: var(--text-accent);
+    margin-bottom: var(--spacing-xl);
+}
+
+.client-projects,
+.personal-projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Project Card */
+.project {
+    background-color: var(--bg-secondary);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    transition: var(--transition);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    position: relative; /* For absolute positioning of icons */
+}
+
+.project:hover {
+    transform: translateY(-8px);
+    background-color: var(--bg-tertiary);
+    border-color: var(--text-accent);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ICONS POSITIONED AT TOP-RIGHT */
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-md);
+}
+
+.project-name {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    line-height: 1.4;
+    flex: 1;
+    padding-right: var(--spacing-md); /* Space for icons */
+}
+
+/* Project links container - TOP RIGHT */
+.project-links {
+    display: flex;
+    gap: var(--spacing-sm);
+    position: absolute; /* Changed from flex to absolute */
+    top: var(--spacing-lg);
+    right: var(--spacing-lg);
+}
+
+.project-links .smicon-selector {
+    width: 22px;
+    height: 22px;
+    opacity: 0.7;
+    transition: var(--transition);
+}
+
+.project-links .smicon-selector:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+/* Project details list */
+.project-details {
+    list-style: none;
+    flex-grow: 1;
+    margin-top: var(--spacing-sm);
+}
+
+.project-details li {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-sm);
+    padding-left: var(--spacing-md);
+    position: relative;
+}
+
+.project-details li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--text-accent);
+    font-size: 0.9rem;
+}
+
+/* Tech stack below project details */
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.project-tech span {
+    background-color: rgba(100, 255, 218, 0.1);
+    color: var(--text-accent);
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--border-radius);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* 10. FOOTER */
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--text-accent),
+        transparent
+    );
+    margin: var(--spacing-xxl) auto;
+    max-width: 300px;
+}
+
+footer {
+    text-align: center;
+    padding: var(--spacing-xl);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-family: var(--font-mono);
+}
+
+footer p {
+    margin: 0;
+}
+
+/* 11. RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+    .hero {
+        gap: 3rem;
+    }
+    
+    .hero-image img {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .hero-text {
+        font-size: clamp(2.5rem, 4vw, 3.5rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+        padding-top: 150px;
+    }
+    
+    .hero-image {
+        justify-content: center;
+    }
+    
+    .hero-image img {
+        width: 280px;
+        height: 280px;
+    }
+    
+    .hero-content {
+        align-items: center;
+    }
+    
+    .subhero-text {
+        text-align: center;
+    }
+    
+    .say-hi-btn {
+        align-self: center;
+    }
+    
+    header {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        padding: 1rem;
+    }
+    
+    .page-selector {
+        gap: var(--spacing-md);
+    }
+    
+    .socials-selector {
+        gap: var(--spacing-md);
+    }
+    
+    .client-projects,
+    .personal-projects {
+        grid-template-columns: 1fr;
+    }
+    
+    section {
+        padding: var(--spacing-xl) 1.5rem;
+    }
+    
+    /* Adjust icon position on mobile */
+    .project-links {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin-top: var(--spacing-sm);
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text {
+        font-size: 2.2rem;
+    }
+    
+    .subhero-text {
+        font-size: 1.1rem;
+    }
+    
+    .hero-image img {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .about h1,
+    .experience h2,
+    .project-type {
+        font-size: 2rem;
+    }
+    
+    .tech-stack {
+        justify-content: center;
+    }
+    
+    .tech-name {
+        font-size: 0.85rem;
+        padding: 0.4rem 1rem;
+    }
+    
+    .project-name {
+        font-size: 1.2rem;
+    }
+    
+    .project-links {
+        gap: var(--spacing-xs);
+    }
+    
+    .project-links .smicon-selector {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* 12. ANIMATIONS */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.project {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* 13. SCROLLBAR */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--text-accent);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #52dbb7;
+}
