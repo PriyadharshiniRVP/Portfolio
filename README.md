@@ -15,19 +15,7 @@ A modern, responsive portfolio website showcasing my projects and skills as a Co
 - **HTML5** – Semantic and accessible markup  
 - **CSS3** – Modern styling using Flexbox and CSS Grid  
 - **Git** – Version control  
-- **GitHub Pages** – Deployment  
-
-## Project Structure
-Portfolio/
-├── index.html # Main HTML file
-├── styles.css # All CSS styles
-├── images/ # All images and icons
-│ ├── cat.png # Profile image
-│ ├── github.png # GitHub icon
-│ ├── linkedin.png # LinkedIn icon
-│ ├── email.png # Email icon
-│ └── weblink.png # Website link icon
-└── README.md # Project documentation
+- **GitHub Pages** – Deployment 
 
 
 ## Live Demo
